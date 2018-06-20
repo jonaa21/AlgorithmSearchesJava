@@ -1,5 +1,7 @@
 package sr.unasat.search;
 
+import sr.unasat.entities.Person;
+
 import java.util.ArrayList;
 
 public class SearchService {
@@ -8,53 +10,37 @@ public class SearchService {
         int i;
         for (i = 0; i < array.length; i++) {
             if (array[i] == term) {
-                break;
-            }
-        }
-        if(i != term){
-                System.out.println("Term: " + term);
-                System.out.println("Term found at index: " + i);
                 return i;
             }
-            else{
-            System.out.println("Can't find term");
         }
-        return i; //-1 omdat deze index niet bestaat
+        return -1; //-1 omdat deze index niet bestaat
     }
 
-    public static void binarySearch(int[] array, int term) {
-        int first= 0;
-        int mid;
-        int last = array.length;
+    public static int binarySearchIterative(int[] array, int term) {
+        int left = 0;
+        int right = array.length-1;
 
-        while (first <= last){
-            mid = (first + last)/2;
-            if (array[mid] < term){
-                first = mid+1;
-            }
-            else if(array[mid] == term){
-                System.out.println("Element found at index: " + mid);
-            }else{
-                last = mid - 1;
+        while (left <= right) {
+            int mid = left + ((right - left) / 2);
+            if (array[mid] == term) {
+                return mid;
+            } else if (term < array[mid]) {
+                right = mid - 1;
+            } else{
+                left = mid + 1;
             }
         }
-        if(first>last){
-            System.out.println("Element is not found");
-        }
+        return -1;
     }
 
-    public static void linearSearchString(String term, String[] array) {
+    public static String linearSearchString(String term, String[] array) {
         int i;
         for (i = 0; i < array.length; i++) {
-            if (array[i] == term) {
-                System.out.println("Term: " + term);
-                System.out.println("Term found at index: " + i);
-                break;
+            if (array[i].equals(term)) {
+                return "Term found at index: " + i;
             }
         }
-        if (i >= array.length) {
-            System.out.println("Term not found");
-        }
+             return "Term not found";
     }
 
     public static StringBuilder linearSearchText(String[] array){
@@ -67,5 +53,6 @@ public class SearchService {
         return stringBuilder;
     }
     //linearSearch(String term, String array) ==> return een nette text
+
 }
 
