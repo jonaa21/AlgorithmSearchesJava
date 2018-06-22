@@ -6,17 +6,17 @@ public class InsertionSort {
 
     static String insertionSort(int[] array){
 
-        int leftBound;
-        int rightBound;
+        int currentIndex;
+        int firstUnsorted;
 
-        for(rightBound=1;rightBound<array.length; rightBound++){
-            int temp = array[rightBound];
-            leftBound = rightBound;
-            while (leftBound>0 && array[leftBound-1] >= temp){
-                array[leftBound] = array[leftBound-1];
-                leftBound--;
+        for(firstUnsorted=1;firstUnsorted<array.length; firstUnsorted++){
+            int temp = array[firstUnsorted];
+            currentIndex = firstUnsorted;
+            while (currentIndex>0 && array[currentIndex-1] >= temp){
+                array[currentIndex] = array[currentIndex-1];
+                --currentIndex;
             }
-            array[leftBound] = temp;
+            array[currentIndex] = temp;
         }
         return Arrays.toString(array);
     }
