@@ -7,6 +7,6 @@ public class App {
         int[] a1 = {90, 3, 100, 65, 80};
 
         //System.out.println(BubbleSort.bubbleSort(a1));
-        System.out.println(SelectionSort.selectionSort(a1));
+        //System.out.println(InsertionSort.insertionSort(a1));
     }
 }

@@ -7,24 +7,24 @@ public class SelectionSort {
     static String selectionSort(int[] array){
 
         int leftBound;
-        int rightBound;
-        int minimum;
+        int currentIndex;
+        int unsortedMinimum;
 
         for(leftBound = 0; leftBound<array.length-1; leftBound++){
-            minimum = leftBound;
-            for (rightBound = leftBound+1; rightBound<array.length; rightBound++){
-                if (array[rightBound] < array[minimum]) {
-                    minimum = rightBound;
+            unsortedMinimum = leftBound;
+            for (currentIndex = leftBound+1; currentIndex<array.length; currentIndex++){
+                if (array[currentIndex] < array[unsortedMinimum]) {
+                    unsortedMinimum = currentIndex;
                 }
             }
-            swap(array, leftBound, minimum);
+            swap(array, leftBound, unsortedMinimum);
         }
         return Arrays.toString(array);
     }
 
-    public static void swap(int[] array, int first, int second) {
-        int temp = array[first];
-        array[first] = array[second];
-        array[second] = temp;
+    private static void swap(int[] array, int currentIndex, int leftIndex) {
+        int temp = array[currentIndex];
+        array[currentIndex] = array[leftIndex];
+        array[leftIndex] = temp;
     }
 }
