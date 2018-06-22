@@ -17,7 +17,9 @@ public class SelectionSort {
                     unsortedMinimum = currentIndex;
                 }
             }
-            swap(array, leftBound, unsortedMinimum);
+            if (leftBound != unsortedMinimum) {
+                swap(array, leftBound, unsortedMinimum);
+            }
         }
         return Arrays.toString(array);
     }
