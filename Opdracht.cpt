@@ -1,0 +1,17 @@
+Created by Jonathan on 6/23/2018
+
+This is a concept file with following syntax for each concept.
+# Concept Heading
+* step1
+* step2
+
+
+* Opdracht 6/23/2018
+1. Implementeer een sort op basis van een Persoon object van
+    achter- en voornaam dmv: a. bubble sort
+                             b. selection sort
+                             c. insertion sort
+    Persoon => getFullname();
+    vb lastname + fullname;
+
+2. Zelf compareTo() schrijven voor een String

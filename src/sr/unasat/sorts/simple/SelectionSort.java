@@ -1,4 +1,4 @@
-package sr.unasat.sorts;
+package sr.unasat.sorts.simple;
 
 import java.util.Arrays;
 

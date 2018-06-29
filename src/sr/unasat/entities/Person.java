@@ -1,29 +1,43 @@
 package sr.unasat.entities;
 
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
 
 public class Person {
 
-    private String name;
+    private String firstname;
+    private String lastname;
     private int id;
+
     private List<Person> persons = new ArrayList<>();
 
-    public Person(String name, int id) {
-        this.name = name;
+    public Person(int id, String firstname, String lastname) {
         this.id = id;
+        this.firstname = firstname;
+        this.lastname = lastname;
     }
 
     public Person() {
     }
 
-    public String getName() {
-        return name;
+    public String getFirstname() {
+        return firstname;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
+    }
+
+    public String getLastname() {
+        return lastname;
+    }
+
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
+    }
+
+    public String getFullname(){
+        return lastname + " " + firstname;
     }
 
     public int getId() {
@@ -34,20 +48,9 @@ public class Person {
         this.id = id;
     }
 
-    public void addPerson(String name){
-        persons.add(new Person(name, id));
-    }
-
-    public String findPeopleLinear(String name){
-        for (Person person :
-                persons) {
-            if (null!=person.getName() && person.getName().equals(name)){
-                System.out.println(name + " has been found");
-                return name + " has been found";
-            }
-        }
-        System.out.println(name + " has not been found");
-        return name + " has not been found";
+    @Override
+    public String toString() {
+        return getFullname();
     }
 
     public int findPeopleBinary(Person[] persons, Person age){
@@ -66,11 +69,4 @@ public class Person {
         return -1;
     }
 
-    public int compareTo(Person person1, Person person2) {
-
-    if(person1.getId() != person2.getId()){
-        return -1;
-    }
-    return 0;
-    }
 }
