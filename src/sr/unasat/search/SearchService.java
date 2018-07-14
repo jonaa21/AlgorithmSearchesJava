@@ -1,9 +1,5 @@
 package sr.unasat.search;
 
-import sr.unasat.entities.Person;
-
-import java.util.ArrayList;
-
 public class SearchService {
 
     public static int binarySearchIterative(int[] array, int term) {
@@ -18,6 +14,28 @@ public class SearchService {
                 right = mid - 1;
             } else{
                 left = mid + 1;
+            }
+        }
+        return -1;
+    }
+
+    public static int binarySearchRecursive(int[] array, int term, int left, int right){
+
+        left = 0;
+        right = array.length;
+
+        if (left > right){
+            return -1;
+        }
+
+        while (left <= right) {
+            int mid = left + ((right - left) / 2);
+            if (array[mid] == term) {
+                return mid;
+            } else if (term < array[mid]) {
+                binarySearchRecursive(array, term, left, mid - 1);
+            } else{
+                binarySearchRecursive(array, term, left = mid + 1, right);
             }
         }
         return -1;
