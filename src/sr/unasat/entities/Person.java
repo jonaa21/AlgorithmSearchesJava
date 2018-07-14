@@ -17,9 +17,6 @@ public class Person {
         this.lastname = lastname;
     }
 
-    public Person() {
-    }
-
     public String getFirstname() {
         return firstname;
     }
@@ -36,7 +33,7 @@ public class Person {
         this.lastname = lastname;
     }
 
-    public String getFullname(){
+    private String getFullname(){
         return lastname + " " + firstname;
     }
 

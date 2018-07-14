@@ -15,3 +15,14 @@ This is a concept file with following syntax for each concept.
     vb lastname + fullname;
 
 2. Zelf compareTo() schrijven voor een String
+
+** Opdracht 6/30/2018
+
+Array {100, 10, 300, 90}
+Array {"sap", "appel", "sinaasappel", "appelsap"}
+1. Sorteer de array in reverse order mbv een sort algorithm en stack data structure
+2. Sorteer de array in reverse order mbv een aangepaste sort (no stack)
+3. Sorteer de array in reverse order mbv een aangepaste compareTo van een string
+
+* Quiz 6/7/2018
+Hoofdstuk 1 t/m 4 (Queus and Stacks)

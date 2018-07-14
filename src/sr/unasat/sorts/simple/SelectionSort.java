@@ -1,10 +1,8 @@
 package sr.unasat.sorts.simple;
 
-import java.util.Arrays;
-
 public class SelectionSort {
 
-    static String selectionSort(int[] array){
+    public static int[] selectionSort(int[] array){
 
         int leftBound;
         int currentIndex;
@@ -21,7 +19,7 @@ public class SelectionSort {
                 swap(array, leftBound, unsortedMinimum);
             }
         }
-        return Arrays.toString(array);
+        return array;
     }
 
     private static void swap(int[] array, int currentIndex, int leftIndex) {

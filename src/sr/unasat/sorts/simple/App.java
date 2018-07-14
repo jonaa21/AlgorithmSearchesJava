@@ -1,16 +1,17 @@
 package sr.unasat.sorts.simple;
 
-import sr.unasat.entities.Person;
 import sr.unasat.common.PrintToConsole;
+import sr.unasat.entities.Person;
 
 public class App {
 
     public static void main(String[] args) {
 
         int[] a1 = {90, 3, 100, 65, 80};
+        String[] array = {"appel", "sinaasappel", "sap", "appelsap"};
 
-        System.out.println(BubbleSort.bubbleSort(a1));
-        //System.out.println(InsertionSort.insertionSort(a1));
+        String[] sortedArray = ReverseInsertionSort.reversedInsertionSort(array);
+        PrintToConsole.execute(ReverseInsertionSort.reversedInsertionSort(sortedArray));
 
         Person person1 = new Person(1, "Jonaa", "Olly");
         Person person2 = new Person(2, "Mitchel", "Pawiro");
@@ -19,7 +20,7 @@ public class App {
     Person[] personArray = {person1, person2, person3};
 
     //BubbleSort
-    Person[] sortedArray = BubbleSort.bubbleSort(personArray);
-        PrintToConsole.execute(sortedArray);
+    /*Person[] sortedArray = BubbleSort.bubbleSort(personArray);
+        PrintToConsole.execute(sortedArray)*/
     }
 }
